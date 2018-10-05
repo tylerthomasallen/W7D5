@@ -1,0 +1,86 @@
+Started GET "/" for 127.0.0.1 at 2018-10-05 09:26:05 -0700
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+:
+
+Started POST "/__better_errors/b1cb59e2ea8f6a3b/variables" for 127.0.0.1 at 2018-10-05 09:26:06 -0700
+Started GET "/" for 127.0.0.1 at 2018-10-05 09:27:54 -0700
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+:
+
+Started POST "/__better_errors/78e1a7ca75405af8/variables" for 127.0.0.1 at 2018-10-05 09:27:54 -0700
+Started GET "/" for 127.0.0.1 at 2018-10-05 09:29:09 -0700
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+:
+
+Started POST "/__better_errors/909a6f07716d226b/variables" for 127.0.0.1 at 2018-10-05 09:29:09 -0700
+Started POST "/__better_errors/909a6f07716d226b/variables" for 127.0.0.1 at 2018-10-05 09:29:37 -0700
+Started POST "/__better_errors/909a6f07716d226b/variables" for 127.0.0.1 at 2018-10-05 09:29:37 -0700
+Started POST "/__better_errors/909a6f07716d226b/variables" for 127.0.0.1 at 2018-10-05 09:29:38 -0700
+Started GET "/" for 127.0.0.1 at 2018-10-05 09:32:08 -0700
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+:
+
+Started POST "/__better_errors/85ff5cc235940465/variables" for 127.0.0.1 at 2018-10-05 09:32:09 -0700
+Started GET "/" for 127.0.0.1 at 2018-10-05 09:32:11 -0700
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+:
+
+Started POST "/__better_errors/097119aec2d8f567/variables" for 127.0.0.1 at 2018-10-05 09:32:11 -0700
+Started GET "/" for 127.0.0.1 at 2018-10-05 09:32:11 -0700
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+:
+
+Started POST "/__better_errors/d81baa02908b99f5/variables" for 127.0.0.1 at 2018-10-05 09:32:11 -0700
+Started GET "/" for 127.0.0.1 at 2018-10-05 09:32:11 -0700
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+:
+
+Started POST "/__better_errors/421bbff769a07684/variables" for 127.0.0.1 at 2018-10-05 09:32:11 -0700
+Started GET "/" for 127.0.0.1 at 2018-10-05 09:32:12 -0700
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+:
+
+Started POST "/__better_errors/37cf1994334d341f/variables" for 127.0.0.1 at 2018-10-05 09:32:12 -0700
+Started GET "/" for 127.0.0.1 at 2018-10-05 09:32:12 -0700
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+:
+
+Started POST "/__better_errors/b5ae1e7a45b3c88f/variables" for 127.0.0.1 at 2018-10-05 09:32:12 -0700
+  [1m[35m (380.2ms)[0m  [1m[35mCREATE DATABASE "BenchBnB_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (288.3ms)[0m  [1m[35mCREATE DATABASE "BenchBnB_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-10-05 09:33:50 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1176ms (Views: 1173.8ms | ActiveRecord: 0.0ms)
+
+
