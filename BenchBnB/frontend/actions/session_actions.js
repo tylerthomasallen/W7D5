@@ -19,7 +19,7 @@ export const receiveErrors = errors => ({
 });
 
 
-const signup = currentUser => dispatch => {
+export const signup = currentUser => dispatch => {
   APIUtil.fetchSignUp(currentUser).then(
     user => (dispatch(receiveCurrentUser(user))),
     err => (
@@ -30,7 +30,7 @@ const signup = currentUser => dispatch => {
 
 
 
-const login = currentUser => dispatch => {
+export const login = currentUser => dispatch => {
   APIUtil.fetchLoginUser(currentUser).then(
     user => (dispatch(receiveCurrentUser(user))),
     err => (
