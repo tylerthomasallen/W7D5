@@ -1,4 +1,4 @@
-export const fetchNewUser = (user) => {
+export const fetchSignUp = (user) => {
   return $.ajax ({
     method: 'POST',
     url: '/api/user',

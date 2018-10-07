@@ -7,7 +7,6 @@ class User < ApplicationRecord
   after_initialize :ensure_token
 
   def self.find_by_credentials(username, pw)
-    debugger
     user = User.find_by(username: username)
     user && user.valid_pw?(pw) ? user : nil
   end

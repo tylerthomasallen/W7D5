@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   private
 
   def login(user)
-    debugger
     user.reset_token
     session[:session_token] = user.session_token
     @current_user = user
@@ -28,7 +27,6 @@ class ApplicationController < ActionController::Base
   end
 
   def logout
-    debugger
     current_user.reset_token
     session[:session_token] = nil
     @current_user = nil
