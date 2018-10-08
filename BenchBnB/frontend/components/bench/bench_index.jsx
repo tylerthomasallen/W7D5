@@ -1,4 +1,5 @@
 import React from 'react';
+import BenchIndexItem from './bench_index_item';
 
 class BenchIndex extends React.Component {
   constructor(props) {
@@ -14,14 +15,12 @@ class BenchIndex extends React.Component {
     if (this.props.benches.benches) {
       benches = this.props.benches.benches;
     }
-    debugger;
+    let benchItems = benches.map(bench => <BenchIndexItem key={bench.id} bench={bench} />);
     return (
       <div>
         <h1>Benches Index Component!</h1>
         <ul>
-          {benches.map(bench =>
-            <li key={bench.id}>{bench.description}</li>
-          )}
+          {benchItems}
         </ul>
       </div>
     );
