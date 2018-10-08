@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.signup = signup;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.APIUtil = APIUtil;
 
 
   ReactDOM.render(<Root store={ store }/>, root);

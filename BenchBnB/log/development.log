@@ -1161,3 +1161,168 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 17ms (Views: 10.0ms | ActiveRecord: 2.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-10-08 10:05:23 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1532413478262727620)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateBenches (20181008170849)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (28.7ms)[0m  [1m[35mCREATE TABLE "benches" ("id" bigserial primary key, "description" character varying NOT NULL, "lat" float NOT NULL, "lng" float NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181008170849_create_benches.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_benches_on_lat_and_lng" ON "benches"  ("lat", "lng")[0m
+  ↳ db/migrate/20181008170849_create_benches.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181008170849"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1532413478262727620)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-10-08 10:22:29 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tylerallen/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 266ms (Views: 262.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 10:28:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 240ms (Views: 237.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-10-08 10:31:22 -0700
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"bench"=>{"description"=>"The first and greatest bench", "lat"=>"37.75398", "lng"=>"-122.413945"}}}
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-10-08 10:31:54 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"tyler", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "tyler"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "tyler"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "MrXO4HkyR2u8NekoMIEk5Q"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$10$18vAStBI3JXrtxx3PISuheJPaQFnSO2v544KmB2DEQu8jZyhfsZiK"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "MrXO4HkyR2u8NekoMIEk5Q"], ["updated_at", "2018-10-08 17:31:54.611194"], ["id", 1]]
+  ↳ app/models/user.rb:29
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.1ms)
+Completed 200 OK in 79ms (Views: 7.0ms | ActiveRecord: 11.8ms)
+
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-10-08 10:32:09 -0700
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"bench"=>{"description"=>"The first and greatest bench", "lat"=>"37.75398", "lng"=>"-122.413945"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "MrXO4HkyR2u8NekoMIEk5Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Unpermitted parameter: :bench
+Unpermitted parameter: :bench
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/benches_controller.rb:10
+  [1m[36mBench Create (2.1ms)[0m  [1m[32mINSERT INTO "benches" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-10-08 17:32:55.335591"], ["updated_at", "2018-10-08 17:32:55.335591"]]
+  ↳ app/controllers/api/benches_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/benches_controller.rb:10
+Completed 500 Internal Server Error in 45998ms (ActiveRecord: 13.4ms)
+
+
+
+PG::NotNullViolation - ERROR:  null value in column "description" violates not-null constraint
+DETAIL:  Failing row contains (1, null, null, null, 2018-10-08 17:32:55.335591, 2018-10-08 17:32:55.335591).
+:
+  app/controllers/api/benches_controller.rb:10:in `create'
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-10-08 10:33:07 -0700
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"bench"=>{"description"=>"The first and greatest bench", "lat"=>"37.75398", "lng"=>"-122.413945"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "MrXO4HkyR2u8NekoMIEk5Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Unpermitted parameters: :bench, :format
+Unpermitted parameters: :bench, :format
+Completed 500 Internal Server Error in 46692ms (ActiveRecord: 5.0ms)
+
+
+
+ArgumentError - wrong number of arguments (given 3, expected 1):
+  app/controllers/api/benches_controller.rb:21:in `bench_params'
+  app/controllers/api/benches_controller.rb:10:in `create'
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-10-08 10:34:05 -0700
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"bench"=>{"description"=>"The first and greatest bench", "lat"=>"37.75398", "lng"=>"-122.413945"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "MrXO4HkyR2u8NekoMIEk5Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Unpermitted parameter: :bench
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/benches_controller.rb:10
+  [1m[36mBench Create (1.4ms)[0m  [1m[32mINSERT INTO "benches" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-10-08 17:34:19.584474"], ["updated_at", "2018-10-08 17:34:19.584474"]]
+  ↳ app/controllers/api/benches_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/benches_controller.rb:10
+Completed 500 Internal Server Error in 14164ms (ActiveRecord: 11.7ms)
+
+
+
+PG::NotNullViolation - ERROR:  null value in column "description" violates not-null constraint
+DETAIL:  Failing row contains (2, null, null, null, 2018-10-08 17:34:19.584474, 2018-10-08 17:34:19.584474).
+:
+  app/controllers/api/benches_controller.rb:10:in `create'
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-10-08 10:34:43 -0700
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"description"=>"The first and greatest bench", "lat"=>"37.75398", "lng"=>"-122.413945"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "MrXO4HkyR2u8NekoMIEk5Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/benches_controller.rb:10
+  [1m[36mBench Create (0.9ms)[0m  [1m[32mINSERT INTO "benches" ("description", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "The first and greatest bench"], ["lat", 37.75398], ["lng", -122.413945], ["created_at", "2018-10-08 17:35:01.685771"], ["updated_at", "2018-10-08 17:35:01.685771"]]
+  ↳ app/controllers/api/benches_controller.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/benches_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/benches_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/benches_controller.rb:12
+  Rendering api/benches/show.json.jbuilder
+  Rendered api/benches/show.json.jbuilder (0.7ms)
+Completed 200 OK in 29740ms (Views: 11.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-10-08 10:35:48 -0700
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/index.json.jbuilder (1.8ms)
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.4ms)
+
+
