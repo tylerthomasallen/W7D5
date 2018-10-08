@@ -7,7 +7,7 @@ class BenchIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getBenches();
+    this.props.getBenches(this.props.bounds);
   }
 
   render() {

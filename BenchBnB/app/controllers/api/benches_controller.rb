@@ -2,7 +2,6 @@ class Api::BenchesController < ApplicationController
   before_action :require_login, only: [:create]
 
   def index
-    debugger
     @benches = Bench.in_bounds(bounds);
     render :index
   end
