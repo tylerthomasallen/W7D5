@@ -6,11 +6,9 @@ class Api::BenchesController < ApplicationController
   end
 
   def create
-    debugger
     @bench = Bench.create(bench_params)
 
     if @bench.save
-      debugger
       render :show
     else
       render json: @bench.errors.full_messages

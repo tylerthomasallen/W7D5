@@ -25,7 +25,7 @@ export const fetchLoginUser = (user) => {
   });
 };
 
-export const fetchAllBenches = () => {
+export const fetchBenches = () => {
   return $.ajax ({
     method: 'GET',
     url: 'api/benches'
@@ -33,7 +33,6 @@ export const fetchAllBenches = () => {
 };
 
 export const fetchCreatedBench = (bench) => {
-  debugger
   return $.ajax ({
     method: 'POST',
     url: 'api/benches',

@@ -4,6 +4,7 @@ import * as APIUtil from './util/api/api_util';
 import configureStore from './store/store';
 import Root from './components/root';
 import { login, signup, logout } from './actions/session_actions';
+import { getBenches } from './actions/bench_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.APIUtil = APIUtil;
+  window.getBenches = getBenches;
 
 
   ReactDOM.render(<Root store={ store }/>, root);
