@@ -25,10 +25,13 @@ export const fetchLoginUser = (user) => {
   });
 };
 
-export const fetchBenches = () => {
+export const fetchBenches = (bounds) => {
   return $.ajax ({
     method: 'GET',
-    url: 'api/benches'
+    url: 'api/benches',
+    data: {
+      bounds
+    }
   });
 };
 

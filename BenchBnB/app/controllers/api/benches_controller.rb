@@ -2,7 +2,9 @@ class Api::BenchesController < ApplicationController
   before_action :require_login, only: [:create]
 
   def index
-    @benches = Bench.all
+    debugger
+    @benches = Bench.in_bounds(bounds);
+    render :index
   end
 
   def create
@@ -17,5 +19,9 @@ class Api::BenchesController < ApplicationController
 
   def bench_params
     params.require(:bench).permit(:description, :lat, :lng);
+  end
+
+  def bounds
+    params[:bounds]
   end
 end
